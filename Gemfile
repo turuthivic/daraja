@@ -9,8 +9,9 @@ gem 'sass-rails', '>= 6'
 gem 'webpacker', '~> 4.0'
 gem 'turbolinks', '~> 5'
 gem 'devise'
-# gem 'bootstrap', '~> 4.4.1'
-# gem 'jquery-rails'
+gem 'omniauth'
+gem 'omniauth-facebook'
+
 
 
 
