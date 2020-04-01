@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   root 'pages#index'
+  get '/dashboard', to: 'users#dashboard'
+  get 'users/update'
   get 'pages/about'
   get 'pages/contact'
   devise_for :users,
