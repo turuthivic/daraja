@@ -1,2 +1,15 @@
-<h1>Users#dashboard</h1>
-<p>Find me in app/views/users/dashboard.html.erb</p>
+<h1>Online Status</h1><i class="toggle fa fa-edit" aria-controls="user-status"></i>
+<div class="media">
+  <div class="media-right">
+    <p><strong><% if current_user.status %> Online <% else %> Offline <% end %></strong></p> <i class="toggle fa fa-edit" aria-controls="user-status"></i><br/>
+  </div>
+  <div class="media-right">
+    <%= form_for :user, url: users_update_url(@user), action: :update, method: :post, html: {class: "invisible", id: "user-status" } do |f| %>
+      <div class="text-field">
+        <%= f.select( :status, options_for_select([["Online", true], ["Offline", false]]), {}, {class: "kdkd"}) %>
+      </div>
+      <p><a class="toggle fa fa-edit" aria-controls="user-status">Cancel</a></p>
+      <%= f.submit "Save", class: "btn btn-danger" %>
+    <% end %>
+  </div>
+</div>
